@@ -36,3 +36,10 @@ str1 = "jello"
 str2 = "                    "
 print(str2.isspace())
 print(str1.isspace())
+
+str1="World Health Organization"
+print(str1.istitle())
+print(str1.startswith("World"))
+print(str1.swapcase())
+str1="i am kheni urval"
+print(str1.title())
