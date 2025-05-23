@@ -1,6 +1,8 @@
-i=0
+i="Urval"
+j=1
 while True:
     print(i)
-    i+=1
-    if(i%2==0): 
+    if(j==2): 
         break
+    print(i,i)
+    j+=1
