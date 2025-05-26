@@ -1,4 +1,3 @@
-
 questions = [
     "1. What is the capital of India?",
     "2. How many days are there in a leap year?",
@@ -41,4 +40,21 @@ prize_money = [1000, 2000, 3000, 5000, 10000, 20000, 40000, 80000, 160000, 32000
                640000, 1250000, 2500000, 5000000, 70000000]
 
 earned = 0
-print("Welcome to KBC (Kaun Banega Crorepati)\n")
+print("🎉 Welcome to KBC (Kaun Banega Crorepati) 🎉\n")
+
+for i in range(15):
+    print(questions[i])
+    for option in options[i]:
+        print(option)
+    ans = input("Your answer (A/B/C/D): ").strip().upper()
+
+    if ans == correct_answers[i]:
+        earned = prize_money[i]
+        print(f"✅ Correct! You have won ₹{earned}\n")
+    else:
+        print(f"❌ Wrong answer. The correct answer was '{correct_answers[i]}'.")
+        print(f"You take home ₹{earned}. Better luck next time!\n")
+        break
+else:
+    print("🎊 Congratulations! You are a Crorepati! 🎊")
+    print(f"You have won the grand prize of ₹{prize_money[-1]}!\n")
