@@ -1,8 +1,0 @@
-print("Hello Wolrd")
-print(5)
-print("I am Urval", 777)
-print(13*17)
-print(2+8)
-print(10/5)
-print(60-45)
-print(13%3)
