@@ -1,5 +1,5 @@
 a=6
-b=2
+b=3
 print("The First Number is : ", a)
 print("The Second Number is : ", b)
 (a,b)=(b,a)
