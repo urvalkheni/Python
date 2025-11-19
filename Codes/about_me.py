@@ -1,6 +1,0 @@
-print("Name: Kheni Urval")
-print("Branch: Computer Engineering")
-print("Roll No: 24ce055")
-print("College: Example Engineering College")
-print("Hobbies: Coding, Reading, Music")
-print("Goal: To become a skilled software engineer.")
