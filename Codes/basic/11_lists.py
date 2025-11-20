@@ -1,4 +1,4 @@
-"""10_lists.py
+"""11_lists.py
 List indexing, slicing, methods, iteration.
 """
 
@@ -10,7 +10,7 @@ print(nums[2:])
 
 nums.append(50)
 nums.insert(1, 15)
-removed = nums.pop()  # removes last
+removed = nums.pop()
 nums.remove(30)
 print("Removed last:", removed)
 print("List now:", nums)

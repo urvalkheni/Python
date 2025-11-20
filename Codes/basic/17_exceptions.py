@@ -1,4 +1,4 @@
-"""16_exceptions.py
+"""17_exceptions.py
 Try/except/finally example.
 """
 
@@ -16,8 +16,3 @@ def safe_divide(a, b):
 
 print(safe_divide(10, 2))
 print(safe_divide(5, 0))
-
-try:
-    raise ValueError("Custom error example")
-except ValueError as e:
-    print("Caught:", e)

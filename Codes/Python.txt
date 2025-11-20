@@ -1,0 +1,611 @@
+=============================
+PYTHON BEGINNER HANDBOOK
+=============================
+
+Table of Contents
+-----------------
+1. Introduction to Python
+2. Key Features of Python
+3. Python Versions
+4. Python Implementations
+5. How Python Works Internally
+6. Installation & Tools
+7. Data Types
+8. Variables
+9. Operators
+10. Expressions, Literals & Syntax Errors
+11. Control Flow
+12. Functions
+13. Strings
+14. Collections (Lists, Tuples, Sets, Dicts)
+15. Modules & Packages
+16. File Handling
+17. Exception Handling
+18. Object-Oriented Programming (OOP)
+19. Python Ecosystem
+20. Best Practices
+21. Short Summary / Quick Revision
+
+---------------------------------
+1. Introduction to Python
+---------------------------------
+
+What is Python?
+• Python is a high-level, interpreted, general-purpose programming language.
+• It focuses on readability and simplicity, using clean and minimal syntax.
+
+Why is Python so popular?
+• Easy to learn: syntax is close to English.
+• Versatile: used in web, data, AI, scripting, automation, games, and more.
+• Huge ecosystem: thousands of libraries and frameworks.
+• Strong community: tutorials, Q&A, open-source projects.
+• Great for beginners and professionals.
+
+Real-world use cases
+• Data Analysis: Pandas, NumPy.
+• Machine Learning & AI: TensorFlow, PyTorch, scikit-learn.
+• Web Development: Django, Flask, FastAPI.
+• Automation/Scripting: automate files, emails, reports.
+• DevOps & Cloud: deployment scripts, CI/CD tools.
+• Cybersecurity: penetration testing tools, security scripts.
+• Desktop & CLI Apps: utilities, tools, GUIs.
+
+Short history
+• Creator: Guido van Rossum.
+• First released: 1991.
+• Named after: "Monty Python" comedy group, not the snake.
+• Python 2 and Python 3 co-existed for years; Python 2 reached end-of-life in 2020.
+
+---------------------------------
+2. Key Features of Python
+---------------------------------
+
+• High-level
+	- You focus on logic, not low-level memory or CPU details.
+
+• Interpreted
+	- Code is executed line by line by the Python interpreter.
+	- No separate compile step needed (unlike C/C++/Java).
+
+• Dynamically typed
+	- You don't declare variable types explicitly.
+	- Type is decided at runtime.
+	- Example:
+		x = 10        # int
+		x = "hello"   # now str
+
+• Cross-platform
+	- Runs on Windows, macOS, Linux, and more.
+
+• Huge community & ecosystem
+	- Many libraries, frameworks, tutorials, and open-source projects.
+
+• Large standard library
+	- Built-in modules for math, dates, files, networking, etc.
+
+• Scalability & Productivity
+	- Easy to prototype quickly.
+	- Big companies (Google, Instagram, Netflix, Dropbox) use Python.
+
+---------------------------------
+3. Python Versions
+---------------------------------
+
+Python 2 vs Python 3
+• Python 2: older, now officially dead (end of life: 2020).
+• Python 3: actively developed and improved.
+• Most modern code, libraries, and tutorials use Python 3.
+
+Why Python 3 is preferred
+• Better Unicode support (for all languages/emojis).
+• Cleaner syntax (e.g. print() is a function).
+• New features (f-strings, type hints, async, pattern matching in 3.10+).
+
+Versioning
+• Python versions look like: MAJOR.MINOR.PATCH
+	- Example: 3.10.9, 3.11.5, 3.12.1
+• You normally choose a stable recent version (e.g. 3.11+).
+
+---------------------------------
+4. Python Implementations
+---------------------------------
+
+• CPython
+	- Written in: C
+	- Default and most widely used implementation.
+	- When you download Python from python.org, it is CPython.
+
+• PyPy
+	- Written in: RPython (a subset of Python)
+	- Uses Just-In-Time (JIT) compilation for speed.
+	- Good for performance-critical applications.
+
+• Jython
+	- Written in: Java
+	- Runs on the Java Virtual Machine (JVM).
+	- Integrates well with Java libraries.
+
+• IronPython
+	- Written in: C#
+	- Runs on the .NET / CLR platform.
+	- Integrates with .NET libraries.
+
+• MicroPython
+	- Designed for microcontrollers and embedded devices.
+	- Used on boards like ESP32, PyBoard, etc.
+
+---------------------------------
+5. How Python Works Internally
+---------------------------------
+
+Basic execution model
+• Your source code (.py file) → compiled to bytecode (.pyc)
+• Bytecode is executed by the Python Virtual Machine (PVM).
+• High-level view:
+	Python code → Bytecode → Python Interpreter (PVM) → Machine code
+
+Dynamic typing
+• Variables do not have fixed types; values do.
+• You can assign different types to the same variable name.
+
+Garbage collection & memory management
+• Python automatically frees memory of unused objects.
+• Uses reference counting and a garbage collector.
+• You do not manually allocate/free memory like in C.
+
+---------------------------------
+6. Python Installation & Tools
+---------------------------------
+
+Python interpreter
+• Download from: https://www.python.org
+• Check version:
+	python --version
+	or
+	python3 --version
+
+REPL (Read-Eval-Print Loop)
+• Start interactive mode:
+	python
+• Type expressions and see results immediately.
+• Exit with:
+	quit()
+
+Virtual environments
+• Isolate project dependencies.
+• Commands (Windows):
+	python -m venv venv
+	venv\Scripts\activate
+	deactivate
+
+pip package manager
+• Install packages:
+	pip install requests
+• List packages:
+	pip list
+• Upgrade:
+	pip install --upgrade package_name
+
+Editors & IDEs
+• VS Code (lightweight, extensions-based).
+• PyCharm (full-featured Python IDE).
+• Others: Sublime Text, Atom, Notepad++, etc.
+
+Useful VS Code Extensions
+• Python (Microsoft)
+• Pylance (better IntelliSense)
+• Black or autopep8 (formatting)
+• isort (import sorting)
+• GitLens (Git integration)
+
+---------------------------------
+7. Data Types
+---------------------------------
+
+Built-in simple types
+• int → integers
+	x = 10
+
+• float → decimal numbers
+	price = 19.99
+
+• str → text
+	name = "Alice"
+
+• bool → True/False
+	is_valid = True
+
+Collections
+• list → ordered, mutable sequence
+	nums = [1, 2, 3]
+
+• tuple → ordered, immutable sequence
+	point = (10, 20)
+
+• set → unordered, unique elements
+	unique = {1, 2, 2, 3}  # {1, 2, 3}
+
+• dict → key:value mapping
+	person = {"name": "Bob", "age": 25}
+
+NoneType
+• Represents "no value" or "nothing".
+	value = None
+
+type() examples
+• type(10)       → <class 'int'>
+• type(3.14)     → <class 'float'>
+• type("hi")    → <class 'str'>
+• type([1, 2])   → <class 'list'>
+
+---------------------------------
+8. Variables
+---------------------------------
+
+Naming rules
+• Must start with a letter or underscore.
+• Can contain letters, numbers, and underscores.
+• Case-sensitive: age and Age are different.
+• Should not be a Python keyword (if, else, for, class, etc.).
+
+Examples
+• valid_name = 10
+• _hidden_value = 5
+• user_name = "admin"
+
+Assignment
+• age = 25
+• pi = 3.14
+
+Constants (by convention)
+• Use ALL_CAPS for values you don't plan to change:
+	MAX_USERS = 100
+
+Multiple assignment
+• a, b, c = 1, 2, 3
+• x = y = 0  # both x and y are 0
+
+---------------------------------
+9. Operators
+---------------------------------
+
+Arithmetic operators
+• +, -, *, /, //, %, **
+	a = 7
+	b = 3
+	a + b  # 10
+	a ** b # 343
+
+Comparison operators
+• ==, !=, <, >, <=, >=
+	x = 5
+	x > 3   # True
+
+Logical operators
+• and, or, not
+	is_member = True
+	has_coupon = False
+	discount = is_member and not has_coupon
+
+Assignment operators
+• =, +=, -=, *=, /=, //=, %=, **=
+	x = 10
+	x += 5  # now 15
+
+Bitwise operators
+• &, |, ^, ~, <<, >>
+	a = 6  # 110 in binary
+	b = 3  # 011 in binary
+	a & b  # 010 → 2
+
+Membership operators
+• in, not in
+	"py" in "python"      # True
+	3 in [1, 2, 3]         # True
+
+Identity operators
+• is, is not
+	a = [1, 2]
+	b = [1, 2]
+	a == b   # True (values equal)
+	a is b   # False (different objects)
+
+---------------------------------
+10. Expressions, Literals & Syntax Errors
+---------------------------------
+
+Expressions
+• Combination of values and operators that produces a result.
+	2 + 3
+	len("hello")
+	price * quantity
+
+Literals
+• Fixed values written directly in code.
+	10, 3.14, "Shadow", True, None
+
+Syntax errors
+• Caused by invalid Python grammar.
+	Examples:
+	print("Hello"   # missing closing parenthesis
+	if x > 5        # missing colon
+
+• Python will stop execution and show an error message.
+
+---------------------------------
+11. Control Flow
+---------------------------------
+
+if / elif / else
+• Example:
+	age = 18
+	if age >= 18:
+			print("Adult")
+	elif age >= 13:
+			print("Teenager")
+	else:
+			print("Child")
+
+while loop
+• Repeats while condition is True.
+	count = 0
+	while count < 3:
+			print(count)
+			count += 1
+
+for loop
+• Iterates over a sequence.
+	for item in [1, 2, 3]:
+			print(item)
+
+break, continue, pass
+• break → exit loop early
+• continue → skip to next iteration
+• pass → do nothing (placeholder)
+
+---------------------------------
+12. Functions
+---------------------------------
+
+Defining functions
+• Use def keyword:
+	def greet(name):
+			print(f"Hello, {name}!")
+
+Parameters & return values
+• Parameters: inputs to the function.
+• return: send a value back.
+	def add(a, b):
+			return a + b
+
+Default arguments
+	def power(base, exp=2):
+			return base ** exp
+
+Keyword arguments
+	result = power(base=3, exp=3)
+
+Lambda (anonymous functions)
+• Short one-line functions.
+	square = lambda x: x * x
+	print(square(5))  # 25
+
+---------------------------------
+13. Strings
+---------------------------------
+
+Slicing
+	text = "Python"
+	text[0]    # 'P'
+	text[-1]   # 'n'
+	text[0:3]  # 'Pyt'
+	text[:4]   # 'Pyth'
+	text[2:]   # 'thon'
+
+Formatting (f-strings)
+	name = "Alice"
+	age = 25
+	msg = f"{name} is {age} years old"
+
+Escape sequences
+• \n → newline
+• \t → tab
+• \" → double-quote
+• \\ → backslash
+
+Common string methods
+• text.upper(), text.lower(), text.title()
+• text.strip(), text.replace("old", "new")
+• text.find("py"), "py" in text
+
+---------------------------------
+14. Collections (Lists, Tuples, Sets, Dicts)
+---------------------------------
+
+Lists
+• Ordered, mutable collections.
+	nums = [10, 20, 30]
+	nums.append(40)
+	nums.insert(1, 15)
+	nums.remove(20)
+	last = nums.pop()
+	for n in nums:
+			print(n)
+
+Tuples
+• Ordered, immutable collections.
+	point = (3, 4)
+	x, y = point  # unpacking
+
+Sets
+• Unordered, unique elements.
+	a = {1, 2, 3}
+	b = {3, 4, 5}
+	union = a | b
+	inter = a & b
+
+Dictionaries
+• Key-value pairs.
+	user = {"name": "Alice", "age": 30}
+	user["age"] = 31
+	user["city"] = "Paris"
+
+	print(user.get("name"))
+	for key, value in user.items():
+			print(key, value)
+
+---------------------------------
+15. Modules & Packages
+---------------------------------
+
+Modules
+• A module is a single .py file.
+	import math
+	print(math.pi)
+
+from x import y
+• Import specific names.
+	from math import sqrt
+	print(sqrt(25))
+
+Creating your own module
+• Create a file my_math.py:
+	def add(a, b):
+			return a + b
+
+• Use it in another file:
+	import my_math
+	print(my_math.add(2, 3))
+
+Packages
+• A folder with an __init__.py file, containing modules.
+
+pip install
+• Install external packages from PyPI.
+	pip install requests
+
+---------------------------------
+16. File Handling
+---------------------------------
+
+Reading & writing files
+• Always use with open() for automatic closing.
+
+Writing
+	with open("notes.txt", "w", encoding="utf-8") as f:
+			f.write("Hello file!\n")
+
+Reading
+	with open("notes.txt", "r", encoding="utf-8") as f:
+			content = f.read()
+	print(content)
+
+---------------------------------
+17. Exception Handling
+---------------------------------
+
+try / except
+	try:
+			x = int("abc")
+	except ValueError as e:
+			print("Conversion error:", e)
+
+finally
+	try:
+			f = open("file.txt")
+			# use file
+	except FileNotFoundError:
+			print("File not found")
+	finally:
+			print("This always runs")
+
+Custom exceptions
+	class NegativeNumberError(Exception):
+			pass
+
+	def sqrt_positive(x):
+			if x < 0:
+					raise NegativeNumberError("x must be non-negative")
+
+---------------------------------
+18. Object-Oriented Programming (OOP)
+---------------------------------
+
+Classes & objects
+	class Person:
+			def __init__(self, name, age):  # constructor
+					self.name = name
+					self.age = age
+
+			def greet(self):
+					print(f"Hi, I'm {self.name}")
+
+	p = Person("Alice", 30)
+	p.greet()
+
+Inheritance
+	class Student(Person):
+			def __init__(self, name, age, student_id):
+					super().__init__(name, age)
+					self.student_id = student_id
+
+Encapsulation
+• Use underscore by convention for "private" attributes.
+	self._balance = 0
+
+Polymorphism
+• Different classes implement the same method name.
+	for obj in [Dog(), Cat()]:
+			obj.speak()  # each class defines speak() differently
+
+---------------------------------
+19. Python Ecosystem
+---------------------------------
+
+Popular libraries & frameworks
+• NumPy → numerical computing.
+• Pandas → data analysis, tables/dataframes.
+• Matplotlib / Seaborn → data visualization.
+• Flask, Django, FastAPI → web development & APIs.
+• TensorFlow, PyTorch → deep learning.
+• Selenium, Requests, BeautifulSoup → web automation & scraping.
+• pytest, unittest → testing.
+
+---------------------------------
+20. Best Practices
+---------------------------------
+
+PEP 8 (Style Guide)
+• Use 4 spaces for indentation.
+• Use lowercase_with_underscores for variables and functions.
+• Use CamelCase for class names.
+• Keep lines reasonably short.
+
+Code formatting
+• Use tools like Black or autopep8.
+
+Comments & docstrings
+• Use # for short explanations.
+• Use triple-quoted strings for function/module documentation.
+
+Project structure
+• Keep code organized into modules and packages.
+• Separate code, tests, and configuration files.
+
+---------------------------------
+21. Short Summary (Quick Revision)
+---------------------------------
+
+• Python is a high-level, interpreted, dynamically-typed, cross-platform language.
+• Widely used for web, data, AI, scripting, automation, and more.
+• Core concepts:
+	- Data types, variables, operators
+	- Control flow (if/elif/else, loops)
+	- Functions, modules, packages
+	- Strings and collections (list/tuple/set/dict)
+	- File handling and exceptions
+	- Object-Oriented Programming
+• Strong ecosystem (NumPy, Pandas, Django, Flask, TensorFlow, etc.).
+• Follow best practices (PEP 8, clean code, good naming).
+
+Use this file as a revision sheet and quick handbook while practicing with the scripts in your `basic` folder.
