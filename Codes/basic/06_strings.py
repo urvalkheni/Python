@@ -1,4 +1,4 @@
-"""05_strings.py
+"""06_strings.py
 String indexing, slicing, methods, f-strings, escapes.
 """
 

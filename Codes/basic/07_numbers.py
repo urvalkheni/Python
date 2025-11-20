@@ -1,4 +1,4 @@
-"""06_numbers.py
+"""07_numbers.py
 Arithmetic operators, augmented assignment, math module.
 """
 import math
